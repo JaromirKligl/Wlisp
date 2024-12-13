@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+{% endblock %}
+
+{% block body %}
+<h1>WLISP MODERN SOLUTIONS FOR ALL PROBLEMS</h1>
+<h2>OPEN FILE:</h2>
+<div id="tree-view">
+    {{ tree_html | safe }}
+
+</div>
+{% endblock %}

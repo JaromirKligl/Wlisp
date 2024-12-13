@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block head %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/ide.css') }}">
+{% endblock %}
+{% block body %}
+<div id="layout">
+  <form method="POST">
+      <div id="Toolbar">
+          <input type="submit" name="save" value="SAVE">
+          <input type="submit" name="save_and_close" value="SAVE AND CLOSE">
+          <input type="submit" name="close" value="CLOSE">
+      </div>
+      <div id="Editor">
+          <label for="editor_text" >EDITOR</label>
+        <textarea id="editor_text" name="editor_text" rows="10" cols="50">{{ editor_text }}</textarea>
+        <input name="submit_editor" type="submit" value="EVALUATE">
+
+      </div>
+
+      <div id="Listener">
+          <label for="listener_text" >LISTENER</label>
+        <textarea id="listener_text" name="listener_text" rows="5" cols="50">{{ listener_text }}</textarea>
+        <input type="submit" name="submit_listener" value="EVALUATE">
+      </div>
+  </form>
+</div>
+{% endblock %}
